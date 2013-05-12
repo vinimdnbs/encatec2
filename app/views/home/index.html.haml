@@ -1,0 +1,503 @@
+%body#home{data: {spy: 'scroll', target: '.navbar'}}
+  .row
+    %nav.navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          = link_to image_tag('logo.jpg'), root_path, class: 'brand'
+
+          .nav-collapse
+            %ul.nav.pull-right
+              %li= link_to 'Home', '#home', class: 'anchorLink'
+              %li= link_to 'Sobre', '#about', class: 'anchorLink'
+              %li= link_to 'Palestrantes', '#pal', class: 'anchorLink'
+              %li= link_to 'Programação', '#prog', class: 'anchorLink'
+              %li= link_to 'Apoio', '#apoio', class: 'anchorLink'
+              %li= link_to 'Contato', '#contact', class: 'anchorLink'
+              %li= link_to 'Blog', '#blog', class: 'anchorLink'
+              %li#inscreva_se= link_to 'Inscreva-se', '#'
+
+  -#----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  .full.callout
+    .container
+      .row
+        .span12.companycallout
+          %h1 2&#186; encontro norte capixaba de tecnologia
+          %h2 cooperação universidade-empresa: uma parceria promissora
+          %h3 12, 13 e 14 de Junho, com Ruby on Rails, Arduino, Web Design e mais
+
+  -#----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  .row-fluid.section#about
+    .container
+      %h2 sobre
+
+      .row-fluid
+        .span6
+          %p.intro O Evento
+          %p.about-content
+            O II
+            %abbr{title: 'Encontro Norte Capixaba de Tecnologia'} ENCATEC
+            é um evento organizado pela
+            = link_to 'Adapti', 'http://adapti.info', target: '_blank'
+            e alunos da UFES/CEUNES nas dependências da universidade. Tem por objetivo reunir estudantes técnicos, universitários e profissionais da área de Tecnologia da Informação. Durante três dias pretende-se transmitir conhecimento através de palestras, oficinas e mini-cursos, além de demonstrar a aplicação prática dos conhecimentos aprendidos em sala de aula, também pretende aproximar os estudantes de tecnologia e computação do norte do Espírito Santo ao mercado de trabalho.
+
+          %p.intro Local
+          %p.about-content
+            BR 101 Norte, Km. 60, Litorâneo, São Mateus – ES
+            %a{href: 'http://goo.gl/maps/COFN9', target: '_blank'}
+              %i{class: 'icon-map-marker'}
+
+          .blue-block.about-content
+            %h3 A Região Norte
+            %input#my-button{type: 'button', value: 'Mostrar Texto'}
+            #region-text
+              %p Praias selvagens, praias urbanizadas, lagoas, dunas, patrimônio histórico. Tudo isso você encontra na região norte do Espírito Santo.
+              %p Linhares, situada a 130 km de Vitória, possui o maior complexo de lagoas da região sudeste. A maior e mais famosa delas é a Lagoa Juparanã. A lagoa possui diversas praias, ideais para quem aprecia o contato com a natureza. O município abriga a Reserva Biológica de Comboios, principal base do projeto Tamar no Espírito Santo e a Reserva Biológica de Sooretama. A praia de Regência é considerada pelos especialistas a melhor para a prática de surf no estado.
+              %p O encontro das águas do Rio Doce com o sol alaranjado do entardecer criam um espetáculo fascinante em Colatina. Conhecida como Princesa do Norte, a cidade está entre as mais desenvolvidas do norte do estado. Conta com um moderno pólo industrial, com destaque para o setores têxtil e moveleiro.
+              %p São Mateus é conhecido pelas praias de águas mornas e pelo Sítio Histórico de Porto de São Mateus, onde existem edificações construídas no século XVII. O suntuoso casario é lembrança da época em que o porto era um dos mais movimentados entrepostos comerciais do Brasil colonial. Depois do banho de história, mergulhe nas águas quentes da linda praia de Guriri. Distante 12 km do centro da cidade, o balneário tem um dos carnavais mais animados do Espírito Santo. A tranquila Barra Nova, a 25 km do centro, ainda conserva partes da fauna e da flora intactas. Ideal para os que buscam sossego e contato com a natureza.
+              %p Na divisa com a Bahia fica o município de Conceição da Barra. Itaúnas, famosa por suas dunas e por seu forró que conquistou o resto do país.
+
+        .span5.offset1
+          .pull-right
+            .img-wrap
+              = image_tag('AuditorioCeunes.jpg')
+              %p Auditório do CEUNES
+
+            .img-wrap
+              = image_tag('PortoSaoMateus.jpg')
+              %p Sítio Histórico Porto de São Mateus
+
+            .img-wrap
+              = image_tag('LagoaJuparana.jpg')
+              %p Lagoa Juparanã - Linhares
+
+            .img-wrap
+              = image_tag('CasaraoBarra.jpg')
+              %p Conceição da Barra
+
+  -#----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  .row-fluid.section#pal
+    .container
+      %h2 palestrantes
+
+      .row-fluid
+        .span8
+          .pal-img.change-bc= link_to image_tag('alvaro.png') + 'Álvaro Justen', '#alvaro', id: 'alvaro'
+          .pal-img= link_to image_tag('ana.png') + 'Ana S. de A. Ramos', '#ana', id: 'ana'
+          .pal-img= link_to image_tag('andre.png') + 'André T. Lopes', '#andre', id: 'andre'
+          .pal-img= link_to image_tag('bruno.png') + 'Bruno França', '#bruno', id: 'bruno'
+          .pal-img= link_to image_tag('silhouette.png') + 'Fabiano de O. L.', '#fabiano', id: 'fabiano'
+          .pal-img= link_to image_tag('gabriel.png') + 'Gabriel P. T. Pena', '#gabriel', id: 'gabriel'
+          .pal-img= link_to image_tag('jordan.png') + 'Jordan H. de S. Furno', '#jordan', id: 'jordan'
+          .pal-img= link_to image_tag('lucas.png') + 'Lucas Sampaio', '#lucas', id: 'lucas'
+          .pal-img= link_to image_tag('luiz.png') + 'Luiz Rocha', '#luiz', id: 'luiz'
+          .pal-img= link_to image_tag('plinio.png') + 'Plínio Balduino', '#plinio', id: 'plinio'
+          .pal-img= link_to image_tag('ricardo.png') + 'Ricardo V. dos Santos', '#ricardo', id: 'ricardo'
+          .pal-img= link_to image_tag('zeno.png') + 'Zeno Rocha', '#zeno', id: 'zeno'
+
+        .span4
+          .pal-description#alvaro
+            %h3 Álvaro Justen
+            %h4 Instrutor e desenvolvedor de software
+            %p Álvaro Justen (Turicas) é usuário, ativista e colaborador de projetos de software livre há mais de 9 anos, pythonista e disseminador do Arduino e de iniciativas colaborativas. Atualmente ministra cursos sobre Arduino e desenvolve software para processamento de linguagem natural na EMAp/FGV.
+
+          .pal-description#ana.hide
+            %h3 Ana Shirley de Amorin Ramos
+            %h4 Diretora Pedagógica
+            %p Educadora há 10 anos, Bacharelada em Pedagogia, com especialização em Psicopedagogia, especialização em Terapia Familiar Sistêmica. Sócia na Empresa Clic, onde atua como Diretora Pedagógica. Presta assessorias na área de robótica educacional, e Educação Tecnológica aplicada com o programa ZOOM Education for Life.
+
+          .pal-description#andre.hide
+            %h3 André Teixeira Lopes
+            %h4 Estudante
+            %p Graduando do curso de Ciência da Computação da UFES, campus Alegre. Desenvolvedor .Net C# desde 2007. Microsoft Certified Technology Specialist em .Net desde 2009. Experiêcia (2007-2010) no ramo de Automação Comercial.
+
+          .pal-description#bruno.hide
+            %h3 Bruno França
+            %h4 Programador Android
+            %p Graduando em Ciência da Computação pela UFES e mestre pelo PESC/COPPE/UFRJ. Trabalhou quatro anos como Administrador de Redes e Sistemas Linux e atualmente faz parte da startup Dot Legend, participando do desenvolvimento do aplicativo BoaLista.
+
+          .pal-description#fabiano.hide
+            %h3 Fabiano de Oliveira Lucchese
+            %h4 Diretor Presidente na Sparsi Informática
+            %p Graduado em Engenharia de Computação pela Unicamp e ECL (França). Mestrado em computação pela FEEC/Unicamp. Atualmente doutorando na mesma instituição.
+
+          .pal-description#gabriel.hide
+            %h3 Gabriel Prandi Thomasi Pena
+            %h4 Gerente de Projetos
+            %p Formado em Ciência da Computação pela Universidade Federal de Viçosa há mais de seis anos, hoje, atua como Gerente de Projetos da área de Comunicação e RH da Gapso. Sun Certified Java Programmer (SCJP) e pós-graduado em Gerenciamento de Projetos pela FGV-Rio, já trabalhou no desenvolvimento de sistemas de coordenação de voo offshore e projetos de otimização nas áreas de telecon e transporte rodoviário, tendo como objetivo dos sistemas promover o apoio a decisões em processos complexos de grandes corporações.
+
+          .pal-description#jordan.hide
+            %h3 Jordan Henrique de Souza Furno
+            %h4 Professor da Escola Técnica Master LTDA
+            %p Técnico em Automação Industrial. Professor de Informática Aplicada à Automação, Lógica de Programação, Supervisório e Controle de Processos.
+
+          .pal-description#lucas.hide
+            %h3 Lucas Sampaio
+            %h4 Desenvolvedor Python/Django
+            %p Iniciou Engenharia de Computação no UFES/CEUNES em 2009. Durante a graduação aprendeu sozinho Python e passou a aprender Django, para desenvolvimento web, até que decidiu abandonar o curso e trabalhar no Rio de Janeiro na empresa Órama DTVM. Hoje desenvolve em Python/Django (obviamente), mas também escreve muito CSS e Javascript, e está planejando o seu retorno à academia.
+
+          .pal-description#luiz.hide
+            %h3 Luiz Rocha
+            %h4 Arquiteto de Sistemas
+            %p Luiz Rocha é engenheiro/arquiteto de software e atualmente trabalha na Abril Midia, uma das maiores empresas de mídia do Brasil. Anteriormente trabalhou como consultor na IBM Brasil, focado no mercado de telecomunicações.
+            %p Trabalhou com desenvolvimento e integração de sistemas complexos por toda sua carreira. É formado em Engenharia Civil pela Escola Politécnica da USP.
+
+          .pal-description#plinio.hide
+            %h3 Plínio Balduino
+            %h4 Lead Developer
+            %p Desenvolve softwares há 18 anos e atualmente trabalha com linguagens baseadas na JVM, Rails e JavaScript. Ministra um curso de Ruby on Rails no portal iMasters PRO e, recentemente, escreveu o livro "Dominando JavaScript com jQuery", pela editora Casa do Código.
+
+          .pal-description#ricardo.hide
+            %h3 Ricardo Valeriano dos Santos
+            %h4 Desenvolvedor e Instrutor
+            %p Desenvolvedor de software com mais de 10 anos de experiência, principalmente em aplicações web. Já trabalhou criando aplicativos para dispositivos móveis, sobretudo iOS. É fã de metodologias ágeis de desenvolvimento.
+            %p Estudioso e curioso, também programa para se divertir. Gosta bastante de conhecer as novidades da área e do mercado, estudar os pontos fortes e fracos, e formar uma boa base para comparar as novidades com as soluções já consagradas.
+            %p Acredita que a melhor forma de aprender é tentando ensinar algo, por isso, nos últimos tempos tem dedicado parte do seu tempo a criar talks, sendo alguns deles feitos pelo Brasil. Além disso está aumentando suas contribuições para projetos Open Source.
+            %p Prefere trabalhar com Ruby e JavaScript mas tem consciência de que não existe uma linguagem que ajude em 100% dos casos. Conhece outras linguagens e ecossistemas, principalmente Java e Objective-C (iOS).
+            %p Tecnologias e áreas de interesse: Ruby, Ruby on Rails, JavaScript, Java, REST, TDD, desenvolvimento web, sistemas e práticas ágeis de forma geral.
+            %p Formação:
+            %ul
+              %p Faculdades Integradas Campos Sales, 3º(incompleto), Sistemas de Informação, 2005-2007
+
+          .pal-description#zeno.hide
+            %h3 Zeno Rocha
+            %h4 Front-end Engineer
+            %p Zeno Rocha é graduado em Sistemas de Informação pela Universidade Federal do Rio de Janeiro. Ele já trabalhou como engenheiro de software na Petrobras e Globoesporte.com. Hoje tem 22 anos e trabalha como Front-end Engineer para a empresa norte-americana Liferay, Inc. Além disso, é apresentador do podcast Zone Of Front-Enders e co-fundador da BrazilJS Foundation.
+
+  -#----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  .row-fluid.section#prog
+    .container
+      %h2 programação
+
+      .row-fluid
+        .span12
+          %table.table
+            %thead
+              %tr
+                %th
+                %th Quarta, 12/06
+                %th Quinta, 13/06
+                %th Sexta, 14/06
+            %tbody
+              %tr
+                %td 7:30 - 8:00
+                %td.color-gray CREDENCIAMENTO
+                %td{colspan: '2'}
+              %tr
+                %td 8:00 - 12:00
+                %td.color-blue Desafio Empreendedorismo / Desafio Programação
+                %td
+                  = link_to 'Oficina 1', '#oficina1', role: 'button', data:{toggle: 'modal'}
+                  = " / "
+                  = link_to 'Oficina 2', '#oficina2', role: 'button', data:{toggle: 'modal'}
+                  = " / "
+                  = link_to 'Oficina 3', '#oficina3', role: 'button', data:{toggle: 'modal'}
+                %td.color-pink
+                  = link_to 'Minicurso 1', '#minicurso1', role: 'button', data:{toggle: 'modal'}
+                  = " / "
+                  = link_to 'Minicurso 2', '#minicurso2', role: 'button', data:{toggle: 'modal'}
+                  = " / "
+                  = link_to 'Minicurso 3', '#minicurso3', role: 'button', data:{toggle: 'modal'}
+                  = " / "
+                  = link_to 'Minicurso 4', '#minicurso4', role: 'button', data:{toggle: 'modal'}
+                  = " / "
+                  = link_to 'Minicurso 5', '#minicurso5', role: 'button', data:{toggle: 'modal'}
+              %tr
+                %td 12:00 - 13:00
+                %td.color-gray{colspan: '3'} ALMOÇO
+              %tr
+                %td 13:00 - 13:50
+                %td.no-border-top-and-bottom.color-blue
+                %td Palestra 1
+                %td.color-pink Palestra 7
+              %tr
+                %td 13:50 - 14:40
+                %td.no-border-top-and-bottom.color-blue Mesa redonda sobre iniciação científica vs mercado
+                %td= link_to 'Robótica educacional aplicada como instrumento de aprendizagem', '#palestra2', role: 'button', data:{toggle: 'modal'}
+                %td.color-pink= link_to 'HTML5: Novidades e facilidades', '#palestra8', role: 'button', data:{toggle: 'modal'}
+              %tr
+                %td 14:40 - 15:30
+                %td.no-border-top-and-bottom.color-blue
+                %td Palestra 3
+                %td.color-pink= link_to 'Apresentação de conceitos de sistemas distribuídos', '#palestra9', role: 'button', data:{toggle: 'modal'}
+              %tr
+                %td 15:30 - 16:00
+                %td.color-gray{colspan: '3'} COFFEE-BREAK
+              %tr
+                %td 16:00 - 16:50
+                %td.no-border-top-and-bottom.color-blue
+                %td Palestra 4
+                %td.color-pink= link_to 'Estratégias e táticas para o desenvolvimento de software', '#palestra10', role: 'button', data:{toggle: 'modal'}
+              %tr
+                %td 16:50 - 17:40
+                %td.no-border-top-and-bottom.color-blue
+                  = link_to 'Oficina 1', '#oficina1', role: 'button', data:{toggle: 'modal'}
+                  = " / "
+                  = link_to 'Oficina 2', '#oficina2', role: 'button', data:{toggle: 'modal'}
+                  = " / "
+                  = link_to 'Oficina 3', '#oficina3', role: 'button', data:{toggle: 'modal'}
+                %td= link_to 'Boas práticas em JS para evitar más surpresas', '#palestra5', role: 'button', data:{toggle: 'modal'}
+                %td.color-pink= link_to 'Programação funcional no mundo real', '#palestra11', role: 'button', data:{toggle: 'modal'}
+              %tr
+                %td 17:40 - 18:30
+                %td.no-border-top-and-bottom.color-blue
+                %td= link_to 'Concorrência, paralelismo e o Ruby', '#palestra6', role: 'button', data:{toggle: 'modal'}
+                %td.color-pink= link_to 'Porque você deveria usar e colaborar com software livre', '#palestra12', role: 'button', data:{toggle: 'modal'}
+              %tr
+                %td 18:30
+                %td.color-gray{colspan: '3'} ENCERRAMENTO
+
+          -# modais--------------------------------------------------------------------------------------------------------------------------
+
+          #oficina1.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'oficina1Label', hidde: true}}
+            .modal-header
+              %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
+              %p.intro Oficina
+              %h3#oficina1Label CPL's e Sistemas de Supervisão
+              %h5 Ministrada por Jordan Henrique de Souza Furno
+
+            .modal-body
+              %p - Noções de controladores lógicos programáveis.
+              %p - Funções dos CPLs (temporizador, contador, comparador, IHM).
+              %p - Noções de sistemas supervisórios.
+              %p - Simulação de sistemas supervisórios.
+              %ul
+                %li &#8226; Semáforo Interativo.
+
+          #oficina2.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'oficina2Label', hidde: true}}
+            .modal-header
+              %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
+              %p.intro Oficina
+              %h3#oficina2Label Arduino: Robótica com hardware e software livres
+              %h5 Ministrada por Álvaro Justen
+
+            .modal-body
+              %p Arduino é uma plataforma aberta de hardware e software livres que facilita muito o uso de microcontroladores. Nessa oficina será apresentada uma introdução à plataforma, com o foco em exercícios práticos, além de serem apresentados alguns projetos desenvolvidos pelo instrutor.
+
+          #oficina3.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'oficina3Label', hidde: true}}
+            .modal-header
+              %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
+              %p.intro Oficina
+              %h3#oficina3Label Introdução ao C#
+              %h5 Ministrada por André Teixeira Lopes
+
+            .modal-body
+              %p Histórico, característica, tips, operadores, expressões, orientação a objeto, código não gerenciado, C# 2.0, C# 3.0, C# 4.0.
+              %p Introdução ao .Net Framework - Estrutura, compilação, principais namespaces, Visual Studio, otimizando o trabalho com strings, trabalhando com datas, principais coleções, acesso a dados, SQL, Linq, trabalhando com arquivos, grágicos e formas, threads.
+
+          #minicurso1.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'minicurso1Label', hidde: true}}
+            .modal-header
+              %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
+              %p.intro Minicurso
+              %h3#minicurso1Label Construa seu framework de testes automatizados usando TDD
+              %h5 Ministrado por Ricardo Valeriano dos Santos
+
+            .modal-body
+              %p Entendendo o desenvolvimento guiado por testes através da criação de um framework... de teste!
+              %p - O pavor da tela branca, por onde começar?
+              %p - Porque o teste vem antes?
+              %p - Tudo que você precisa é um assert(true) maroto, e nada mais!
+              %p - Preciso testar tudo, tudo mesmo?
+              %p - Uma suíte de testes verdinha e o fator psicológico.
+              %p - Hoje em dia o termo TDD já é conhecido por muitos desenvolvedores. Mas existem alguns conceitos por trás dessa prática que ainda assustam um pouco os recém chegados. Nesse minicurso vamos discutir sobre esses pontos mais obscuros e criar um programa para auxiliar a prática do TDD a partir do zero, usando a técnica como apoio.
+
+          #minicurso2.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'minicurso2Label', hidde: true}}
+            .modal-header
+              %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
+              %p.intro Minicurso
+              %h3#minicurso2Label Intrudução ao desenvolvimento na plataforma Android
+              %h5 Ministrado por Bruno França
+
+            .modal-body
+              %p Apresentação do SDK e ferramentas, conceitos fundamentais da plataforma e exercícios práticos de desenvolvimento.
+
+          #minicurso3.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'minicurso3Label', hidde: true}}
+            .modal-header
+              %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
+              %p.intro Minicurso
+              %h3#minicurso3Label Mão na massa com javascript e node.js
+              %h5 Ministrado por Lucas Sampaio
+
+            .modal-body
+              %p Javascript direto do servidor abriu a porta para uma infinidade de aplicações, em especial sistemas realtime, como chat. O Node.js é uma plataforma que executa js na VM mais rápida do mercado - a mesma do Chrome - e permite a utilização da linguagem também no servidor para desenvolver aplicações rápidas e relativamente simples.
+
+          #minicurso4.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'minicurso4Label', hidde: true}}
+            .modal-header
+              %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
+              %p.intro Minicurso
+              %h3#minicurso4Label Como desenvolver uma rápida aplicação utilizando Ruby/rails
+              %h5 Ministrado por Plínio Balduino
+
+            .modal-body
+              %p Minicurso de Ruby on Rails apresentando como desenvolver um cadastro rapidamente.
+
+          #minicurso5.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'minicurso5Label', hidde: true}}
+            .modal-header
+              %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
+              %p.intro Minicurso
+              %h3#minicurso5Label Instrumentação eletrônica para iniciantes
+              %h5 Ministrado por Jordan Henrique de Souza Furno
+
+            .modal-body
+              %p - Medição de grandezas elétricas (tensão, corrente).
+              %p - Associação e identificação de resistores.
+              %p - Retificadores monofásicos (meia-onda, onda completa com tomada centra, onda completa em ponte).
+
+          #palestra2.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'palestra2Label', hidde: true}}
+            .modal-header
+              %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
+              %p.intro Palestra
+              %h3#palestra2Label Robótica educacional aplicada como instrumento de aprendizagem
+              %h5 Ministrada por Ana Shirley de Amorim Ramos
+
+            .modal-body
+              %p Apresentação da tecnologia como ferramenta de aprendizagem, fluxo de equilíbrio na aprendizagem com a ferramenta LEGO EDUCATION. Apresentação do programa mindstorms na montagem de robôs.
+
+          #palestra5.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'palestra5Label', hidde: true}}
+            .modal-header
+              %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
+              %p.intro Palestra
+              %h3#palestra5Label Boas práticas em JS para evitar más surpresas
+              %h5 Ministrada por Lucas Sampaio
+
+            .modal-body
+              %p Escrever javascript é bastante fácil, especialmente com jQuery, mais fácil ainda é conhecer o inferno à medida que o código cresce. Para evitar isso, vale a pena seguir algumas boas práticas.
+
+          #palestra6.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'palestra6Label', hidde: true}}
+            .modal-header
+              %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
+              %p.intro Palestra
+              %h3#palestra6Label Concorrência, paralelismo e o Ruby
+              %h5 Ministrada por Ricardo Valeriano dos Santos
+
+            .modal-body
+              %p É possível escrever aplicações concorrentes e (ou) paralelas em Ruby, mas precisamos entender algumas coisas primeiro.
+              %p - O que é concorrência? E esse tal paralelismo?
+              %p - Entendendo como o Global Interpreter (ou VM) Lock interfere no seu programa.
+              %p - Threads e Fibers, e non blocking IO.
+              %p - Usando processos para esquentar todos os cores em uma máquina.
+              %ul
+                %li &#8226; Entendendo melhor o Reactor Pattern.
+
+          #palestra8.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'palestra8Label', hidde: true}}
+            .modal-header
+              %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
+              %p.intro Palestra
+              %h3#palestra8Label HTML5: Novidades e facilidades
+              %h5 Ministrada por Zeno Rocha
+
+            .modal-body
+              %p Serão abordadas todas as principais novidades do HTML5.
+
+          #palestra9.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'palestra9Label', hidde: true}}
+            .modal-header
+              %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
+              %p.intro Palestra
+              %h3#palestra9Label Apresentação de conceitos de sistemas distribuídos
+              %h5 Ministrada por Luiz Rocha
+
+            .modal-body
+              %p Apresentação de conceitos de sistemas distribuídos, como Falácias da Computação Distribuída, Leis de Postel e Gall, além de conceitos básicos e como cada um desses conceitos reflete na construção de um sistema real em uma grande empresa.
+
+          #palestra10.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'palestra10Label', hidde: true}}
+            .modal-header
+              %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
+              %p.intro Palestra
+              %h3#palestra10Label Estratégias e táticas para o desenvolvimento de software
+              %h5 Ministrada por Gabriel Prandi Thomasi Pena
+
+            .modal-body
+              %p A cada dia que passa, as empresas tornam-se mais competitivas. Por isso, a tomada de decisões dos gestores é crucial para o bom desempenho dessas corporações. No caso das grandes companhias, cujos processos são extremamente complexos, a utilização da matemática aplicada e seus modelos, faz da pesquisa operacional um grande aliado.
+              %p Essa palestra tem como objetivo associar tais técnicas ao desenvolvimento de software voltado para as práticas operacionais, táticas e estratégicas das empresas. Além disso, apresentar a importância do levantamento de requisitos para desenvolvê-lo de modo a representar a realidade dos clientes, promovendo interfaces aderentes e acesso a legados, reforçando a importância da Tecnologia da Informação para o sucesso desses sistemas.
+
+          #palestra11.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'palestra11Label', hidde: true}}
+            .modal-header
+              %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
+              %p.intro Palestra
+              %h3#palestra11Label Programação funcional no mundo real
+              %h5 Ministrada por Plínio Balduino
+
+            .modal-body
+              %p Serão demonstrados os usos em produção da programação funcional, as principais linguagens e quais as vantagens em relação aos padrões utilizados hoje em dia.
+
+          #palestra12.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'palestra12Label', hidde: true}}
+            .modal-header
+              %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
+              %p.intro Palestra
+              %h3#palestra12Label Porque você deveria usar e colaborar com software livre
+              %h5 Ministrada por Álvaro Justen
+
+            .modal-body
+              %p Muito se fala sobre preparação do profissional para o mercado de trabalho. Mas o que realmente importa? Em geral, experiência é a resposta. Mas como conseguir experiência, se você está iniciando a carreira? Nessa paletra será abordado o tema software livre, mostrando os benefícios de seu uso e desenvolvimento para o profissional da área de desenvolvimento de software, além de outras vantagens inerentes para empresas, governos, etc.
+
+  -#----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  .row-fluid.section#apoio
+    .container
+      %h2 apoio
+
+    #diamante
+      .container
+        %p.intro Diamante
+        %p
+          Nenhum patrocinador presente nesta cota.
+          = link_to 'Patrocine!', '#contact', class: 'anchorLink'
+
+    .container
+      #ouro
+        %p.intro Ouro
+        %p
+          Nenhum patrocinador presente nesta cota.
+          = link_to 'Patrocine!', '#contact', class: 'anchorLink'
+      #prata
+        %p.intro Prata
+        %p
+          Nenhum patrocinador presente nesta cota.
+          = link_to 'Patrocine!', '#contact', class: 'anchorLink'
+      #bronze
+        %p.intro Bronze
+        %p
+          Nenhum patrocinador presente nesta cota.
+          = link_to 'Patrocine!', '#contact', class: 'anchorLink'
+
+  -#----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  .row.section#contact
+    .container
+      %h2 Contato
+
+    #form
+      .container
+        .row
+          .span5
+            %h3 Entre em contato conosco
+            %p Preencha o formulário abaixo e nós retornaremos em breve
+
+            = form_for @contact, html:{id: 'contact-form', method: 'post', onsubmit: "this.submit.value='Enviando...';this.submit.disabled = true;"}, url: '/contact', remote: true do |c|
+              %fieldset
+                .row
+                  .field.span8
+                    = c.text_field :name, class: 'input-text m-wrap m-ctrl-large', id: 'name', placeholder: 'Seu Nome'
+                  .field.span8
+                    = c.text_field :email, class: 'input-text m-wrap m-ctrl-large', id: 'email', placeholder: 'Seu Email'
+                  .field.span8
+                    = c.text_area :message, class: 'input-textarea m-wrap m-ctrl-large', id: 'message', placeholder: 'Sua Mensagem'
+                  .field.span8
+                    = c.submit 'Enviar', class: 'm-btn custom', id: 'submit'
+
+          .span3
+            #form-message
+
+          .span3.offset1
+            %p.blue-block
+              Rodovia BR 101 Norte, Km. 60
+              %br Bairro Litorâneo
+              São Mateus - ES
+              %br CEUNES - Anexo ao prédio da SUGRAD
+              Tel.: +55 27 3312-1708
+              %br Email: comunicacao@adapti.info
+
+  %footer
+    .row-fluid.section
+      .container
+        %p
+          Desenvolvido por
+          %strong
+            = link_to 'Adapti', 'http://adapti.info', target: '_blank'

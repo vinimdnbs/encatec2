@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="span4"></div>
+    <div class="span4">
+      <div class="well" id="login-form">
+        <h2>Log In</h2>
+        <%= form_tag :action=>"login_attempt" do %>
+
+            <%= label :username, "Usuário:" %>
+            <%= text_field_tag :username, nil, :class=>"login-input" %>
+
+            <%= label :senha, "Senha:" %>
+            <%= password_field_tag :password, nil, :class=>"login-input" %>
+            <br/>
+            <%= submit_tag("Log In", :class=>"btn") %>
+
+        <% end %>
+      </div>
+
+      <% if notice %>
+        <div class="alert">
+          <%= notice %>
+        </div>
+      <% end %>
+    </div>
+    <div class="span4"></div>
+</div>

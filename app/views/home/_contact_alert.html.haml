@@ -1,0 +1,7 @@
+#alert
+  %button{:type=>'button', :class=>'close', :data=>{:dismiss=>'alert'}} x
+  %h3 Erro(s) ao enviar!
+  %h4 Preencha corretamente os campos:
+  %ul
+    - @contact.errors.each do |error, message|
+      %li= message

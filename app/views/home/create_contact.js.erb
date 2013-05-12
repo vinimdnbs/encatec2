@@ -1,0 +1,15 @@
+$.ajax({
+  success: function() {
+    <% if @contact.errors.any? %>
+      $('#form-message').html("<%= escape_javascript(render :partial=>'contact_alert') %>");
+    <% else %>
+      $('#form-message').html("<%= escape_javascript(render :partial=>'contact_success') %>");
+      $('#name').val('');
+      $('#email').val('');
+      $('#message').val('');
+    <% end %>
+  }
+});
+
+$('#submit').val('Enviar');
+$('#submit').removeAttr('disabled');

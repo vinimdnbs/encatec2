@@ -1,0 +1,279 @@
+$blue: #00afef;
+$pink: #f7adaf;
+$light-gray: #eeeeee;
+
+footer {
+  p {
+    text-align: center;
+
+    a {
+      color: black;
+
+      &:hover {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.about-content {
+  margin: 0 10px 40px;
+}
+
+.blue-block {
+  background: $blue;
+  color: white;
+  padding: 20px;
+  word-wrap: break-word;
+}
+
+.callout {
+  background: $blue;
+  padding: 60px 0;
+}
+
+.companycallout {
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+
+  & h1 {
+    font-size: 5.5em;
+    line-height: 1.2em;
+    text-transform: uppercase;
+  }
+
+  & h2 {
+    font-size: 3em;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin: 1.5em 0em 1.5em 0em;
+    text-transform: uppercase;
+  }
+
+  & h3 {
+    font-weight: normal;
+  }
+}
+
+.img-wrap {
+  background-color: $pink;
+  margin-bottom: 15px;
+  padding: 10px;
+
+  p {
+    color: #fff;
+    font-size: 18px;
+    margin: 0;
+    padding-top: 10px;
+    text-align: center;
+  }
+}
+
+.intro {
+  color: #6A6A6A;
+  font-size: 200%;
+  font-weight: 100;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+
+.navbar .nav {
+  & > li {
+    height: 71px;
+  }
+  & > li.active {
+    border-top: 10px solid $pink;
+    height: 61px;
+
+    a {
+      border-top: 10px solid white;
+    }
+  }
+
+  & li > a:hover {
+    border-top: 10px solid $blue;
+  }
+
+  li#inscreva_se {
+    background: $light-gray;
+  }
+}
+
+.m-btn.custom {
+  color: white;
+  background-color: $blue;
+  background-image: none;
+  text-shadow: none;
+
+  &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
+    background-color: $pink;
+    background-image: none;
+  }
+}
+
+.modal {
+  .modal-body {
+    li {
+      list-style: none;
+    }
+  }
+  .modal-header {
+    background-color: $blue;
+    color: white;
+  }
+}
+
+.pal-img {
+  background-color: $light-gray;
+  display: inline-block;
+  font-size: 15px;
+  margin: 0 6px 10px 0;
+  padding: 10px;
+  text-align: center;
+  width: 150px;
+
+  &.change-bc {
+    background-color: $blue;
+
+    a {
+    color: white;
+
+      &:hover {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  a {
+    color: #333333;
+
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  img {
+    margin-bottom: 3px;
+  }
+}
+
+.section{
+  padding: 90px 0 60px;
+}
+
+.show-on-mobile {
+  display: inline!important;
+}
+
+.table {
+  td {
+    border-top: none;
+    border: 1px solid #696969;
+    font-weight: bold;
+
+    &.no-border-top-and-bottom {
+      border-top: none;
+      border-bottom: none;
+    }
+
+    &.color-blue {background-color: $blue;}
+    &.color-gray {background-color: $light-gray;}
+    &.color-pink {background-color: $pink;}
+
+    a{
+      color: #001DC4;
+
+      &:hover {
+        color: #00106E;
+      }
+    }
+  }
+
+  td, th {
+    text-align: center;
+  }
+}
+
+#about, #apoio, #blog, #contact, #pal, #prog {
+  h2 {
+    color: $blue;
+    font-size: 3em;
+    font-weight: 200;
+    line-height: 2em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+#apoio {
+  #bronze, #diamante, #ouro, #prata{
+    padding: 10px 0 40px 0;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  #diamante {
+    background: $light-gray;
+  }
+}
+
+#apoio, #blog, #contact, #pal, #prog {
+  border-top: 1px solid #ccc
+}
+
+#contact-form {
+  fieldset {
+    margin: 40px 0 30px;
+  }
+
+  .input-text {
+    background: #f5f5f5;
+    border: 1px solid #ebebeb;
+    border-top: 1px solid #bfbfbf;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 12px;
+    height: 38px;
+    padding: 0 10px;
+  }
+
+  .input-textarea {
+    background: #f5f5f5;
+    border: 1px solid #ebebeb;
+    border-top: 1px solid #bfbfbf;
+    font-family:Tahoma, Geneva, sans-serif;
+    height: 100px;font-size:12px;
+    padding: 10px;
+    resize: none;
+  }
+
+  .field {
+    padding: 0 0 10px 0;
+  }
+}
+
+#form-message {
+  width: 100%;
+
+  #alert {
+    background: #f8ca00;
+  }
+
+  #alert, #success  {
+    color: white;
+    padding: 20px;
+  }
+
+  #success {
+    background: #35aa47;
+  }
+}
+
+#my-button {
+  display: none;
+}
