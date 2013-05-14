@@ -1,0 +1,2 @@
+module InscrevaSeHelper
+end

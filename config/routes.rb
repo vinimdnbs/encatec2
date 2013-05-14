@@ -1,12 +1,8 @@
 Encatec::Application.routes.draw do
-  root :to =>'home#index'
+  root to: 'home#index'
 
-  resources :posts
-
-  match '/contact'=>'home#create_contact', :via=>'post'
-  match '/adm'=>redirect('/adm/login')
-  match '/login'=>redirect('/adm/login')
-  match ':controller(/:action(/:id))(.:format)'
+  match '/contact' => 'home#create_contact', via: 'post'
+  match '/inscricao' => 'inscreva_se#index', as: 'inscreva_se'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

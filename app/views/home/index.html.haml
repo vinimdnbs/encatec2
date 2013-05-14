@@ -1,4 +1,14 @@
 %body#home{data: {spy: 'scroll', target: '.navbar'}}
+  #fb-root
+  :javascript
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
   .row
     %nav.navbar.navbar-fixed-top
       .navbar-inner
@@ -13,8 +23,14 @@
               %li= link_to 'Programação', '#prog', class: 'anchorLink'
               %li= link_to 'Apoio', '#apoio', class: 'anchorLink'
               %li= link_to 'Contato', '#contact', class: 'anchorLink'
-              %li= link_to 'Blog', '#blog', class: 'anchorLink'
-              %li#inscreva_se= link_to 'Inscreva-se', '#'
+              %li.dropdown
+                = link_to '#', class: 'dropdown-toggle', data: {toggle: 'dropdown'} do
+                  Social
+                  %b.caret
+                %ul.dropdown-menu
+                  %li.fb-like{data: {href: 'http://www.encatec.com.br', send: 'false', width: '200', show: {faces: 'true'}, font: 'tahoma'}}
+                  %li= link_to image_tag('facebook.png') + 'Fanpage Oficial', 'http://www.facebook.com/pages/II-Encatec/539706952736246?fref=ts', target: '_blank'
+              %li#inscreva_se= link_to 'Inscreva-se', inscreva_se_path
 
   -#----------------------------------------------------------------------------------------------------------------------------------------------------------------
   .full.callout
@@ -50,7 +66,7 @@
             %h3 A Região Norte
             %input#my-button{type: 'button', value: 'Mostrar Texto'}
             #region-text
-              %p Praias selvagens, praias urbanizadas, lagoas, dunas, patrimônio histórico. Tudo isso você encontra na região norte do Espírito Santo.
+              %p Praias desertas, praias urbanizadas, lagoas, dunas, patrimônio histórico. Tudo isso você encontra na região norte do Espírito Santo.
               %p Linhares, situada a 130 km de Vitória, possui o maior complexo de lagoas da região sudeste. A maior e mais famosa delas é a Lagoa Juparanã. A lagoa possui diversas praias, ideais para quem aprecia o contato com a natureza. O município abriga a Reserva Biológica de Comboios, principal base do projeto Tamar no Espírito Santo e a Reserva Biológica de Sooretama. A praia de Regência é considerada pelos especialistas a melhor para a prática de surf no estado.
               %p O encontro das águas do Rio Doce com o sol alaranjado do entardecer criam um espetáculo fascinante em Colatina. Conhecida como Princesa do Norte, a cidade está entre as mais desenvolvidas do norte do estado. Conta com um moderno pólo industrial, com destaque para o setores têxtil e moveleiro.
               %p São Mateus é conhecido pelas praias de águas mornas e pelo Sítio Histórico de Porto de São Mateus, onde existem edificações construídas no século XVII. O suntuoso casario é lembrança da época em que o porto era um dos mais movimentados entrepostos comerciais do Brasil colonial. Depois do banho de história, mergulhe nas águas quentes da linda praia de Guriri. Distante 12 km do centro da cidade, o balneário tem um dos carnavais mais animados do Espírito Santo. A tranquila Barra Nova, a 25 km do centro, ainda conserva partes da fauna e da flora intactas. Ideal para os que buscam sossego e contato com a natureza.
@@ -91,7 +107,7 @@
           .pal-img= link_to image_tag('lucas.png') + 'Lucas Sampaio', '#lucas', id: 'lucas'
           .pal-img= link_to image_tag('luiz.png') + 'Luiz Rocha', '#luiz', id: 'luiz'
           .pal-img= link_to image_tag('plinio.png') + 'Plínio Balduino', '#plinio', id: 'plinio'
-          .pal-img= link_to image_tag('ricardo.png') + 'Ricardo V. dos Santos', '#ricardo', id: 'ricardo'
+          .pal-img= link_to image_tag('ricardo.png') + 'Ricardo Valeriano', '#ricardo', id: 'ricardo'
           .pal-img= link_to image_tag('zeno.png') + 'Zeno Rocha', '#zeno', id: 'zeno'
 
         .span4
@@ -143,11 +159,11 @@
 
           .pal-description#plinio.hide
             %h3 Plínio Balduino
-            %h4 Lead Developer
+            %h4 Desenvolvedor de Software
             %p Desenvolve softwares há 18 anos e atualmente trabalha com linguagens baseadas na JVM, Rails e JavaScript. Ministra um curso de Ruby on Rails no portal iMasters PRO e, recentemente, escreveu o livro "Dominando JavaScript com jQuery", pela editora Casa do Código.
 
           .pal-description#ricardo.hide
-            %h3 Ricardo Valeriano dos Santos
+            %h3 Ricardo Valeriano
             %h4 Desenvolvedor e Instrutor
             %p Desenvolvedor de software com mais de 10 anos de experiência, principalmente em aplicações web. Já trabalhou criando aplicativos para dispositivos móveis, sobretudo iOS. É fã de metodologias ágeis de desenvolvimento.
             %p Estudioso e curioso, também programa para se divertir. Gosta bastante de conhecer as novidades da área e do mercado, estudar os pontos fortes e fracos, e formar uma boa base para comparar as novidades com as soluções já consagradas.
@@ -184,23 +200,20 @@
                 %td{colspan: '2'}
               %tr
                 %td 8:00 - 12:00
-                %td.color-blue Desafio Empreendedorismo / Desafio Programação
+                %td.color-blue
+                  %p - Desafio Empreendedorismo
+                  %p - Desafio Programação
                 %td
-                  = link_to 'Oficina 1', '#oficina1', role: 'button', data:{toggle: 'modal'}
-                  = " / "
-                  = link_to 'Oficina 2', '#oficina2', role: 'button', data:{toggle: 'modal'}
-                  = " / "
-                  = link_to 'Oficina 3', '#oficina3', role: 'button', data:{toggle: 'modal'}
+                  Continuação das oficinas:
+                  %p= link_to '- CLP\'s e Sistemas de Supervisão', '#oficina1', role: 'button', data:{toggle: 'modal'}
+                  %p= link_to '- Arduino: Robótica com hardware e software livres', '#oficina2', role: 'button', data:{toggle: 'modal'}
+                  %p= link_to '- Introdução ao C#', '#oficina3', role: 'button', data:{toggle: 'modal'}
                 %td.color-pink
-                  = link_to 'Minicurso 1', '#minicurso1', role: 'button', data:{toggle: 'modal'}
-                  = " / "
-                  = link_to 'Minicurso 2', '#minicurso2', role: 'button', data:{toggle: 'modal'}
-                  = " / "
-                  = link_to 'Minicurso 3', '#minicurso3', role: 'button', data:{toggle: 'modal'}
-                  = " / "
-                  = link_to 'Minicurso 4', '#minicurso4', role: 'button', data:{toggle: 'modal'}
-                  = " / "
-                  = link_to 'Minicurso 5', '#minicurso5', role: 'button', data:{toggle: 'modal'}
+                  %p= link_to '- Construa seu framework de testes automatizados usando TDD', '#minicurso1', role: 'button', data:{toggle: 'modal'}
+                  %p= link_to '- Introdução ao desenvolvimento na plataforma Android', '#minicurso2', role: 'button', data:{toggle: 'modal'}
+                  %p= link_to '- Mão na massa com javascript e node.js', '#minicurso3', role: 'button', data:{toggle: 'modal'}
+                  %p= link_to '- Como desenvolver uma rápida aplicação utilizando Ruby/rails', '#minicurso4', role: 'button', data:{toggle: 'modal'}
+                  %p= link_to '- Instrumentação eletrônica para iniciantes', '#minicurso5', role: 'button', data:{toggle: 'modal'}
               %tr
                 %td 12:00 - 13:00
                 %td.color-gray{colspan: '3'} ALMOÇO
@@ -226,15 +239,13 @@
                 %td 16:00 - 16:50
                 %td.no-border-top-and-bottom.color-blue
                 %td Palestra 4
-                %td.color-pink= link_to 'Estratégias e táticas para o desenvolvimento de software', '#palestra10', role: 'button', data:{toggle: 'modal'}
+                %td.color-pink= link_to 'Sistemas de planejamento utilizando pesquisa operacional no meio corporativo', '#palestra10', role: 'button', data:{toggle: 'modal'}
               %tr
                 %td 16:50 - 17:40
                 %td.no-border-top-and-bottom.color-blue
-                  = link_to 'Oficina 1', '#oficina1', role: 'button', data:{toggle: 'modal'}
-                  = " / "
-                  = link_to 'Oficina 2', '#oficina2', role: 'button', data:{toggle: 'modal'}
-                  = " / "
-                  = link_to 'Oficina 3', '#oficina3', role: 'button', data:{toggle: 'modal'}
+                  %p= link_to '- CLP\'s e Sistemas de Supervisão', '#oficina1', role: 'button', data:{toggle: 'modal'}
+                  %p= link_to '- Arduino: Robótica com hardware e software livres', '#oficina2', role: 'button', data:{toggle: 'modal'}
+                  %p= link_to '- Introdução ao C#', '#oficina3', role: 'button', data:{toggle: 'modal'}
                 %td= link_to 'Boas práticas em JS para evitar más surpresas', '#palestra5', role: 'button', data:{toggle: 'modal'}
                 %td.color-pink= link_to 'Programação funcional no mundo real', '#palestra11', role: 'button', data:{toggle: 'modal'}
               %tr
@@ -246,18 +257,20 @@
                 %td 18:30
                 %td.color-gray{colspan: '3'} ENCERRAMENTO
 
+          %h4 Programação sujeita a alteração sem aviso prévio.
+
           -# modais--------------------------------------------------------------------------------------------------------------------------
 
           #oficina1.modal.hide.fade{tabeindex: '-1', role: 'dialog', aria:{labelledby: 'oficina1Label', hidde: true}}
             .modal-header
               %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
               %p.intro Oficina
-              %h3#oficina1Label CPL's e Sistemas de Supervisão
+              %h3#oficina1Label CLP's e Sistemas de Supervisão
               %h5 Ministrada por Jordan Henrique de Souza Furno
 
             .modal-body
               %p - Noções de controladores lógicos programáveis.
-              %p - Funções dos CPLs (temporizador, contador, comparador, IHM).
+              %p - Funções dos CLP's (temporizador, contador, comparador, IHM).
               %p - Noções de sistemas supervisórios.
               %p - Simulação de sistemas supervisórios.
               %ul
@@ -289,7 +302,7 @@
               %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
               %p.intro Minicurso
               %h3#minicurso1Label Construa seu framework de testes automatizados usando TDD
-              %h5 Ministrado por Ricardo Valeriano dos Santos
+              %h5 Ministrado por Ricardo Valeriano
 
             .modal-body
               %p Entendendo o desenvolvimento guiado por testes através da criação de um framework... de teste!
@@ -304,7 +317,7 @@
             .modal-header
               %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
               %p.intro Minicurso
-              %h3#minicurso2Label Intrudução ao desenvolvimento na plataforma Android
+              %h3#minicurso2Label Introdução ao desenvolvimento na plataforma Android
               %h5 Ministrado por Bruno França
 
             .modal-body
@@ -367,7 +380,7 @@
               %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
               %p.intro Palestra
               %h3#palestra6Label Concorrência, paralelismo e o Ruby
-              %h5 Ministrada por Ricardo Valeriano dos Santos
+              %h5 Ministrada por Ricardo Valeriano
 
             .modal-body
               %p É possível escrever aplicações concorrentes e (ou) paralelas em Ruby, mas precisamos entender algumas coisas primeiro.
@@ -402,7 +415,7 @@
             .modal-header
               %button.close{type: 'button', data:{dismiss: 'modal'}, aria:{hidden: 'true'}} x
               %p.intro Palestra
-              %h3#palestra10Label Estratégias e táticas para o desenvolvimento de software
+              %h3#palestra10Label Sistemas de planejamento utilizando pesquisa operacional no meio corporativo
               %h5 Ministrada por Gabriel Prandi Thomasi Pena
 
             .modal-body
@@ -433,30 +446,31 @@
   .row-fluid.section#apoio
     .container
       %h2 apoio
+      %p.intro= raw "Deseja patrocinar ou apoiar o II ENCATEC? Envie-nos um #{link_to 'contato', '#contact', class: 'anchorLink'}!"
 
-    #diamante
-      .container
-        %p.intro Diamante
-        %p
-          Nenhum patrocinador presente nesta cota.
-          = link_to 'Patrocine!', '#contact', class: 'anchorLink'
+      .row-fluid
+        .span4
+          #left-side
+            %h3 Realização
+            = link_to image_tag('logoadapti.png'), 'http://www.adapti.info', target: '_blank'
+            %h3 Apoio
+            = link_to image_tag('ceunes.png'), 'http://www.ceunes.ufes.br', target: '_blank'
 
-    .container
-      #ouro
-        %p.intro Ouro
-        %p
-          Nenhum patrocinador presente nesta cota.
-          = link_to 'Patrocine!', '#contact', class: 'anchorLink'
-      #prata
-        %p.intro Prata
-        %p
-          Nenhum patrocinador presente nesta cota.
-          = link_to 'Patrocine!', '#contact', class: 'anchorLink'
-      #bronze
-        %p.intro Bronze
-        %p
-          Nenhum patrocinador presente nesta cota.
-          = link_to 'Patrocine!', '#contact', class: 'anchorLink'
+        .span8
+          .row-fluid.high-quota
+            .span7
+              #diamante.cota
+                %h3 Diamante
+            .span5#right-side
+              #ouro.cota
+                %h3 Ouro
+              #prata.cota
+                %h3 Prata
+                = link_to image_tag('uptime.png'), 'http://www.uptime.com.br', target: '_blank'
+
+          #bronze.cota
+            %h3 Bronze
+            = link_to image_tag('gapso.png'), 'http://www.gapso.com.br', target: '_blank'
 
   -#----------------------------------------------------------------------------------------------------------------------------------------------------------------
   .row.section#contact
@@ -492,12 +506,4 @@
               São Mateus - ES
               %br CEUNES - Anexo ao prédio da SUGRAD
               Tel.: +55 27 3312-1708
-              %br Email: comunicacao@adapti.info
-
-  %footer
-    .row-fluid.section
-      .container
-        %p
-          Desenvolvido por
-          %strong
-            = link_to 'Adapti', 'http://adapti.info', target: '_blank'
+              %br Email: encatec@adapti.info

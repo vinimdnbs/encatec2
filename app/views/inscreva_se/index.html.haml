@@ -1,0 +1,20 @@
+%body#inscreva-se
+  .row
+    %nav.navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          = link_to image_tag('logo.jpg'), root_path, class: 'brand'
+
+          .nav-collapse
+            %ul.nav.pull-right
+              %li= link_to 'Voltar a home', root_path
+
+  .insc-block
+    .container
+      %h1 Atenção ao realizar a sua inscrição! Instruções:
+      %h2= raw 'Para se inscrever nos minicursos, desafios e oficinas é <strong>obrigatória</strong> a inscrição no ENCATEC.'
+      %h2 Só será aceita a inscrição em apenas uma oficina.
+      %h2 Só será aceita a inscrição em apenas um minicurso.
+      = link_to 'http://www.eventick.com.br/encatec?locale=pt', class: 'm-btn big', target: '_blank' do
+        Inscreva-se
+        %i.icon-ok

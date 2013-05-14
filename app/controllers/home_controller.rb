@@ -3,7 +3,6 @@
 class HomeController < ApplicationController
   def index
     @title = '2º Encontro Norte Capixaba de Tecnologia'
-    @posts = Post.order('created_at desc')
     @contact = Contact.new
   end
 
