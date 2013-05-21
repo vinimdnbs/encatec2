@@ -9,7 +9,7 @@
     = javascript_include_tag 'application'
 
     = csrf_meta_tags
-    %meta{property: 'og:image', content: "#{asset_path('logoencatec.png')}"}
+    %meta{property: 'og:image', content: "#{URI.join(root_url, image_path('logoencatec.png'))}"}
 
   -# Body
   = yield

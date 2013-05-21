@@ -100,39 +100,16 @@ footer {
     }
   }
 
-  & li.dropdown {
-    a {
-      b.caret {
-        margin-top: 18px;
-      }
-    }
-
-    ul.dropdown-menu{
-      li {
-        a {
-          color: #777777;
-          &:hover {
-            background: none;
-            border: none;
-            color: black;
-          }
-          img {
-            margin-right: 10px;
-          }
-        }
-        &.fb-like {
-          padding: 3px 20px 3px 20px;
-        }
-      }
-    }
-  }
-
   & li > a:hover {
     border-top: 10px solid $blue;
   }
 
   li#inscreva_se {
     background: $light-gray;
+  }
+
+  & li a img {
+    margin-bottom: 4px;
   }
 }
 
